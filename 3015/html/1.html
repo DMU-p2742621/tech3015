@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Met a river</title>
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+    <header>
+            <!--This is the title of each of my pages-->
+        <div class="contents">
+          <p>
+            Met a river
+          </p>
+          <!-- This is my main menu. It can jump to the key selection page or go back to the home page.-->
+          <nav id="mainMenu">
+            <i class="fas fa-bars" id="menuButton"></i>
+            <a class="menuItem" href="../index.html">Home</a>
+            <a class="menuItem" href="../html/1.html">River</a>
+            <a class="menuItem" href="../html/2-1.html">Snake</a>
+            <a class="menuItem" href="../html/2.html">Cat</a>
+            <a class="menuItem" href="../html/7.html">Fighting</a>
+            <a class="menuItem" href="../html/11.html">People</a>
+          </nav>
+        </div>
+      </header>
+      <article>
+        <!--Space left by the main menu bar and content-->
+        <section class="highlightSection col-right">
+          <!-- This is added to a computer screen size and a tablet screen size image.-->
+          <picture>
+            <source media="(min-width: 800px)" srcset="../img/1.jpg" />
+            <!-- This is the added image of the phone screen size.-->  
+            <img
+              class="Image"
+              src="../img/1.jpg"
+              alt="dog and river"/>
+          </picture>
+          <!--Text to guide you through your choices.--> 
+          <div class="question">
+          <p>
+            Should the dog catch fish?
+          </p>
+          </div>
+          <!--This is the button that jumps to the next screen, with onclick to add the interactive action of a click, and location.href to link the jump between the two screens.--> 
+          <div class="container">
+            <button class="btn btn1"onclick="{location.href='../html/2.html'}">Yes</button>
+            <button class="btn btn2"onclick="{location.href='../html/4.html'}">No</button>
+        </div>
+     
+            
+      </article>
+        <!--This is the main menu bar that shrinks when the phone is large.-->  
+      <script src="../js/calla.js"></script>
+    </body>
+  </html>

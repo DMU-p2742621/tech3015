@@ -1,0 +1,161 @@
+*{
+/* Initialisation */
+    margin: 0;
+    padding: 0;
+   /* Total width and height of the element including inner margins and borders */
+    box-sizing: border-box;
+}
+body{
+    /* 100% window height */
+    height: 100vh;
+   /* flexible layout horizontal + vertical centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* Image background */
+    background-image: url(../img/foot.jpg);
+}
+.container{
+   /* Relative positioning */
+    position: relative;
+    /* flexible layout horizontal alignment line feeds allowed */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container .box{
+    position: relative;
+    width: 500px;
+    height: 500px;
+   /* Overflow hidden */
+    overflow: hidden;
+    /* Animated transitions */
+    transition: 0.5s;
+}
+/* Mouse over, box gets bigger */
+.container .box:hover{
+    transform: scale(1.25);
+    box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+.container .box .img-box{
+    /* Absolute positioning */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* Gradient Mask (Black - Transparent) Hidden by default */
+.container .box .img-box::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#222,transparent);
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+}
+/* Mouse over, gradient mask displayed */
+.container .box:hover .img-box::before{
+    opacity: 1;
+}
+.container .box .img-box img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+   /* Keep original proportions, cut long edges */
+    object-fit: cover;
+}
+.container .box .text-box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    /* flexible layout element at the end of the container */
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+    z-index: 2;
+}
+.container .box .text-box h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+   /* Moved out of visual range by default */
+    transform: translateY(200px);
+    transition: 0.5s;
+}
+.container .box:hover .text-box h2{
+/* Mouse over, move into visual range */
+    transform: translateY(0);
+   /* Set the animation delay time */
+    transition-delay: 0.3s;
+}
+.container .box .text-box p{
+    font-size: 13px;
+    line-height: 20px;
+    /* Moved out of visual range by default */
+    transform: translateY(200px);
+    transition: 0.5s;
+}
+.container .box:hover .text-box p{
+   /* Mouse over, move into visual range */
+    transform: translateY(0);
+ /* Set the animation delay time */
+    transition-delay: 0.4s;
+}
+
+.contents {
+    font-family: "Amatic SC", cursive;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .container1{
+    text-align: center;
+  }
+  .Button {
+    border: 1px solid #3498db;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "montserrat";
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+  }
+  .Button{
+    color: #fff;
+  }
+  .Button:hover{
+    color: #3498db;
+  }
+  .Button::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #3498db;
+    z-index: -1;
+    transition: 0.8s;
+  }
+  .Button::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+  }
+  .Button::before{
+    height:180%;
+  }
+  .Button:hover::before{
+    height: 0%;
+  }
